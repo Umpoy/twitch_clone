@@ -11,8 +11,8 @@ import Header from './Header'
 
 const App = () => {
     return (
-        <div class="app">
-        <Header/>
+        <div class="ui container">
+            <Header />
             <BrowserRouter>
                 <div>
                     <Route path="/" exact component={StreamList} />
