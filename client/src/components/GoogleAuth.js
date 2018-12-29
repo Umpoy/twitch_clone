@@ -6,4 +6,4 @@ class GoogleAuth extends Component {
     }
 }
 
-export default GoogleAuth
+export default GoogleAuth;
