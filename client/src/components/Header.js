@@ -11,7 +11,7 @@ const Header = () => {
                 <GoogleAuth />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;
