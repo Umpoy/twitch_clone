@@ -33,6 +33,7 @@ class StreamList extends Component {
                         <div className="description">
                             {stream.description}
                         </div>
+                        {stream.userId.name}
                     </div>
 
                 </div>
@@ -44,7 +45,7 @@ class StreamList extends Component {
         if (this.props.isSignedIn) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link to="/stream/new" class="ui button primary">
+                    <Link to="/stream/new" className="ui button primary">
                         Create Stream
                   </Link>
                 </div>
@@ -67,6 +68,7 @@ class StreamList extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('state in streamlist: ', state)
     return {
         streams: Object.values(state.streams),
         currentUserId: state.auth.userId,

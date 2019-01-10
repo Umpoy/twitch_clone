@@ -1,58 +1,13 @@
 {
   "streams": [
     {
-      "title": "test",
-      "description": "test",
-      "userId": "1200690709092743218",
+      "title": "asd",
+      "description": "asdf",
+      "userId": {
+        "userId": "102200690709092743218",
+        "name": "Audrian"
+      },
       "id": 1
-    },
-    {
-      "title": "hello",
-      "description": "test",
-      "userId": "1020690709092743218",
-      "id": 2
-    },
-    {
-      "title": "hello",
-      "description": "world",
-      "userId": "102200690709092743218",
-      "id": 3
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 4
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 5
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 6
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 7
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 8
-    },
-    {
-      "title": "sadf",
-      "description": "asdf",
-      "userId": null,
-      "id": 9
     }
   ]
 }
