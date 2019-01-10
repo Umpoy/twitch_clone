@@ -27,12 +27,12 @@ class StreamList extends Component {
         return this.props.streams.reverse().map(stream => {
             return (
                 <div className="item" key={stream.id}> {this.renderAdmin(stream)}
-                    <i className="large middle aligned icon camera" />
+                    <i className="large middle aligned icon twitter" />
                     <div className="content">
-                        {stream.title}
-                        <div className="description">
+                        <h3>{stream.title}</h3>
+                        <p className="description">
                             {stream.description}
-                        </div>
+                        </p>
                         {stream.userId.name}
                     </div>
 
@@ -54,7 +54,6 @@ class StreamList extends Component {
     }
 
     render() {
-        console.log(this.props.streams)
         return (
             <div>
                 <h2>Streams</h2>
@@ -68,7 +67,6 @@ class StreamList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('state in streamlist: ', state)
     return {
         streams: Object.values(state.streams),
         currentUserId: state.auth.userId,
