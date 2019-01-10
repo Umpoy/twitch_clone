@@ -9,10 +9,8 @@ class StreamList extends Component {
     }
 
     renderAdmin(stream) {
-        console.log('stream.userId: ', stream.userId);
-        //console.log('this.props: ', this.props.currentUserId)
-
-        if (stream.userId.userId === this.props.currentUserId) {
+        
+        if (stream.userId === this.props.currentUserId) {
             return (
                 <div className="right floated content">
                     <button className="ui button primary">
@@ -27,7 +25,7 @@ class StreamList extends Component {
     }
 
     renderList() {
-        return this.props.streams.map(stream => {
+        return this.props.streams.reverse().map(stream => {
             return (
                 <div className="item" key={stream.id}> {this.renderAdmin(stream)}
                     <i className="large middle aligned icon twitter" />
