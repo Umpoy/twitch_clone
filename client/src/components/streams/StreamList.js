@@ -24,7 +24,7 @@ class StreamList extends Component {
     }
 
     renderList() {
-        return this.props.streams.map(stream => {
+        return this.props.streams.reverse().map(stream => {
             return (
                 <div className="item" key={stream.id}> {this.renderAdmin(stream)}
                     <i className="large middle aligned icon camera" />
