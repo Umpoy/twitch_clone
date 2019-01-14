@@ -34,7 +34,7 @@ class StreamList extends Component {
                         <p className="description">
                             {stream.description}
                         </p>
-                        {stream.userId.name}
+                        {stream.name}
                     </div>
 
                 </div>
