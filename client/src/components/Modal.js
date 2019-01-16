@@ -5,14 +5,13 @@ import history from '../history';
 const Modal = props => {
     return ReactDOM.createPortal(
         <div onClick={() => history.push('/')} className="ui dimmer modals visable active">
-            <div className="ui standard modal visable active">
-                <div className="header">Delete</div>
+            <div onClick={(e) => e.stopPropagation()} className="ui standard modal visable active">
+                <div className="header">{props.title}</div>
                 <div className="content">
-                    Are you sure you want to delete?
-               </div>
+                    {props.content}
+                </div>
                 <div className="actions">
-                    <button className="ui primary button">Delete</button>
-                    <button className="ui button">Cancel</button>
+                    {props.actions}
                 </div>
             </div>
         </div>,
