@@ -52,7 +52,8 @@ export const deleteTweet = (id) => async dispatch => {
 export const editTweet = (id, formValues) => async dispatch => {
     const response = await tweets.put(`/tweets/${id}`, formValues);
 
-    dispatch({ type: EDIT_TWEET, payload: response.data })
+    dispatch({ type: EDIT_TWEET, payload: response.data });
+    history.push('/');
 }
 
 
