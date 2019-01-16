@@ -11,14 +11,37 @@ class TweetCreate extends Component {
         this.props.createTweet(formValues);
     }
 
+    isSignedIn() {
+        if (this.props.isSignedIn) {
+            return (
+                <div>
+                    <h3>Create a Story</h3>
+                    <TweetForm onSubmit={this.onSubmit} />
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h3>Please Sign In to tell your story</h3>
+                </div>
+            )
+        }
+    }
+
     render() {
+        console.log(this.props)
         return (
             <div>
-                <h3>Create a Tweet</h3>
-                <TweetForm onSubmit={this.onSubmit} />
+                {this.isSignedIn()}
             </div>
         )
     }
 }
 
-export default connect(null, { createTweet })(TweetCreate);
+const mapStateToProps = (state) => {
+    return {
+        isSignedIn: state.auth.isSignedIn
+    }
+}
+
+export default connect(mapStateToProps, { createTweet })(TweetCreate);
