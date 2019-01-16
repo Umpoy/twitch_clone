@@ -21,3 +21,7 @@ body {
     padding-bottom: 10%;
 }
 
+#modal {
+    color: black;
+    text-shadow: none;
+}
