@@ -21,9 +21,9 @@ class TweetList extends Component {
                     <Link to={`/tweet/edit/${tweet.id}`} className="ui button primary">
                         Edit
                     </Link>
-                    <button className="ui button negative">
+                    <Link to={`/tweet/delete/${tweet.id}`} className="ui button negative">
                         Delete
-                    </button>
+                    </Link>
                 </div>
             )
         }

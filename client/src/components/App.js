@@ -17,7 +17,7 @@ const App = () => {
                     <Route path="/" exact component={TweetList} />
                     <Route path="/tweet/new" component={TweetCreate} />
                     <Route path="/tweet/edit/:id" component={TweetEdit} />
-                    <Route path="/tweet/delete" component={TweetDelete} />
+                    <Route path="/tweet/delete/:id" component={TweetDelete} />
                     <Route path="/tweet/show" component={TweetShow} />
                 </div>
             </Router>
