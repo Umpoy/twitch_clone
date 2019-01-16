@@ -1,13 +1,13 @@
-import streams from '../apis/streams';
+import tweets from '../apis/tweets';
 import history from '../history';
 import {
     SIGN_IN,
     SIGN_OUT,
-    CREATE_STREAM,
-    FETCH_STREAMS,
-    FETCH_STREAM,
-    DELETE_STREAM,
-    EDIT_STREAM
+    CREATE_TWEET,
+    FETCH_TWEETS,
+    FETCH_TWEET,
+    DELETE_TWEET,
+    EDIT_TWEET
 } from '../actions/types';
 
 export const signIn = (userId, name) => {
@@ -23,36 +23,36 @@ export const signOut = () => {
     }
 }
 
-export const createStream = formValues => async (dispatch, getState) => {
+export const createTweet = formValues => async (dispatch, getState) => {
     const { userId, name } = getState().auth;
-    const response = await streams.post('/streams', { ...formValues, userId, name });
+    const response = await tweets.post('/tweets', { ...formValues, userId, name });
     console.log(getState().auth);
-    dispatch({ type: CREATE_STREAM, payload: response.data });
+    dispatch({ type: CREATE_TWEET, payload: response.data });
     history.push('/');
 }
 
-export const fetchStreams = () => async dispatch => {
-    const response = await streams.get('/streams');
+export const fetchTweets = () => async dispatch => {
+    const response = await tweets.get('/tweets');
 
-    dispatch({ type: FETCH_STREAMS, payload: response.data });
+    dispatch({ type: FETCH_TWEETS, payload: response.data });
 }
 
-export const fetchStream = (id) => async dispatch => {
-    const response = await streams.get(`/streams/${id}`);
+export const fetchTweet = (id) => async dispatch => {
+    const response = await tweets.get(`/tweets/${id}`);
 
-    dispatch({ type: FETCH_STREAM, payload: response.data });
+    dispatch({ type: FETCH_TWEET, payload: response.data });
 }
 
-export const deleteStream = (id) => async dispatch => {
-    await streams.delete(`/streams/${id}`);
+export const deleteTweet = (id) => async dispatch => {
+    await tweets.delete(`/tweets/${id}`);
 
-    dispatch({ type: DELETE_STREAM, payload: id });
+    dispatch({ type: DELETE_TWEET, payload: id });
 }
 
-export const editStream = (id, formValues) => async dispatch => {
-    const response = await streams.put(`/streams/${id}`, formValues);
+export const editTweet = (id, formValues) => async dispatch => {
+    const response = await tweets.put(`/tweets/${id}`, formValues);
 
-    dispatch({ type: EDIT_STREAM, payload: response.data })
+    dispatch({ type: EDIT_TWEET, payload: response.data })
 }
 
 

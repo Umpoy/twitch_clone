@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchStreams } from '../../actions';
+import { fetchTweets } from '../../actions';
 
-class StreamList extends Component {
+class TweetList extends Component {
     componentDidMount() {
-        this.props.fetchStreams();
+        this.props.fetchTweets();
     }
 
-    renderAdmin(stream) {
+    renderAdmin(tweet) {
 
-        if (stream.userId === this.props.currentUserId) {
+        if (tweet.userId === this.props.currentUserId) {
             return (
                 <div className="right floated content">
-                    <Link to={`/stream/edit/${stream.id}`} className="ui button primary">
+                    <Link to={`/tweet/edit/${tweet.id}`} className="ui button primary">
                         Edit
                     </Link>
                     <button className="ui button negative">
@@ -25,16 +25,16 @@ class StreamList extends Component {
     }
 
     renderList() {
-        return this.props.streams.reverse().map(stream => {
+        return this.props.tweets.reverse().map(tweet => {
             return (
-                <div className="item" key={stream.id}> {this.renderAdmin(stream)}
+                <div className="item" key={tweet.id}> {this.renderAdmin(tweet)}
                     <i className="large middle aligned icon twitter" />
                     <div className="content">
-                        <h3>{stream.title}</h3>
+                        <h3>{tweet.title}</h3>
                         <p className="description">
-                            {stream.description}
+                            {tweet.description}
                         </p>
-                        {stream.name}
+                        {tweet.name}
                     </div>
 
                 </div>
@@ -46,8 +46,8 @@ class StreamList extends Component {
         if (this.props.isSignedIn) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link to="/stream/new" className="ui button primary">
-                        Create Stream
+                    <Link to="/tweet/new" className="ui button primary">
+                        Create Tweet
                   </Link>
                 </div>
             )
@@ -57,7 +57,7 @@ class StreamList extends Component {
     render() {
         return (
             <div>
-                <h2>Streams</h2>
+                <h2>Tweets</h2>
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>
@@ -69,10 +69,10 @@ class StreamList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        streams: Object.values(state.streams),
+        tweets: Object.values(state.tweets),
         currentUserId: state.auth.userId,
         isSignedIn: state.auth.isSignedIn
     }
 }
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchTweets })(TweetList);
