@@ -19,7 +19,7 @@ class TweetEdit extends Component {
         }
         return (
             <div>
-                <h3>Edit a Tweet</h3>
+                <h3>Edit your Oink</h3>
                 <TweetForm
                     onSubmit={this.onSubmit}
                     initialValues={_.pick(this.props.tweet, 'title', 'description')}

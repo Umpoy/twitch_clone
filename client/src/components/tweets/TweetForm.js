@@ -32,8 +32,8 @@ class TweetForm extends Component {
     render() {
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                <Field name="description" component={this.renderInput} label="Enter Description" />
-                <button className="ui button primary">Submit</button>
+                <Field name="description" component={this.renderInput} label="Enter Your Oink" />
+                <button className="ui button primary">Submit Oink</button>
             </form>
         )
     }
@@ -41,10 +41,6 @@ class TweetForm extends Component {
 
 const validate = (formValues) => {
     const errors = {};
-
-    if (!formValues.title) {
-        errors.title = 'You must enter a title'
-    }
 
     if (!formValues.description) {
         errors.description = 'You must enter a description'
