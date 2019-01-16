@@ -36,7 +36,6 @@ class TweetList extends Component {
 
                     <div className="ui stackable grid">
                         <div className="ten wide column">
-                            <i className="large middle aligned icon twitter" />
                             <div className="content">
                                 {/* <h3>{tweet.title}</h3> */}
                                 <h3>
