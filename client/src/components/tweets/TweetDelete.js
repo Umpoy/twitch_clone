@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Modal from '../Modal';
 import history from '../../history';
 import { fetchTweet, deleteTweet } from '../../actions';
@@ -10,20 +11,21 @@ class TweetDelete extends Component {
     }
 
     renderActions() {
+        const { id } = this.props.match.params;
         return (
             <React.Fragment>
-                <button className="ui button negative">Delete</button>
-                <button className="ui button">Cancel</button>
+                <button onClick={() => this.props.deleteTweet(id)} className="ui button negative">Delete</button>
+                <Link to="/" className="ui button">Cancel</Link>
             </React.Fragment>
         )
     }
 
     renderContent() {
-        if (!this.props.stream) {
+        if (!this.props.tweet) {
             return 'Are you sure you want to delete this story?'
         }
 
-        return `Are you sure you want to delete the story with the title: ${this.props.stream.title}`
+        return `Are you sure you want to delete the story with the title: ${this.props.tweet.title}`
     }
 
     render() {

@@ -47,6 +47,7 @@ export const deleteTweet = (id) => async dispatch => {
     await tweets.delete(`/tweets/${id}`);
 
     dispatch({ type: DELETE_TWEET, payload: id });
+    history.push('/');
 }
 
 export const editTweet = (id, formValues) => async dispatch => {

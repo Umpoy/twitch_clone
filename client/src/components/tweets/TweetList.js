@@ -17,7 +17,7 @@ class TweetList extends Component {
 
         if (tweet.userId === this.props.currentUserId) {
             return (
-                <div className="right floated content" style={align}>
+                <div className="six wide column">
                     <Link to={`/tweet/edit/${tweet.id}`} className="ui button primary">
                         Edit
                     </Link>
@@ -32,14 +32,21 @@ class TweetList extends Component {
     renderList() {
         return this.props.tweets.reverse().map(tweet => {
             return (
-                <div className="item" key={tweet.id}> {this.renderAdmin(tweet)}
-                    <i className="large middle aligned icon twitter" />
-                    <div className="content">
-                        <h3>{tweet.title}</h3>
-                        <p className="description">
-                            {tweet.description}
-                        </p>
-                        {tweet.name}
+                <div className="item" key={tweet.id}>
+
+                    <div className="ui stackable grid">
+                        <div className="ten wide column">
+                            <i className="large middle aligned icon twitter" />
+                            <div className="content">
+                                {/* <h3>{tweet.title}</h3> */}
+                                <h3>
+                                    {tweet.description}
+                                </h3>
+                                <br />
+                                <div className="extra">{tweet.name}</div>
+                            </div>
+                        </div>
+                        {this.renderAdmin(tweet)}
                     </div>
 
                 </div>

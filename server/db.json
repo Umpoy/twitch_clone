@@ -1,11 +1,18 @@
 {
   "tweets": [
     {
-      "title": "hello",
-      "description": "world",
+      "title": "heres a tweet",
+      "description": "story",
       "userId": "102200690709092743218",
       "name": "Audrian M.",
       "id": 1
+    },
+    {
+      "title": "as",
+      "description": "Today, I got trapped in the airport lift for half an hour with my family while heading to departure. We ended up missing our flight. 3000 Malaysian bucks were spent on that flight. No one wants to compensate our loss. FML",
+      "userId": "102200690709092743218",
+      "name": "Audrian M.",
+      "id": 2
     }
   ]
 }
