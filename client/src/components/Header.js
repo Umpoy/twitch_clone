@@ -8,7 +8,6 @@ const Header = () => {
         <div className="ui secondary pointing menu">
             <Link to="/" className="item"><img src={pig} alt="" /></Link>
             <div className="right menu">
-                <Link to="/" className="item">All Tweets</Link>
                 <GoogleAuth />
             </div>
         </div>

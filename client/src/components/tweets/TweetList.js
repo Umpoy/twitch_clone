@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTweets } from '../../actions';
+import GoogleAuth from '../GoogleAuth'
 
 const align = {
     top: '50%',
@@ -18,12 +19,14 @@ class TweetList extends Component {
         if (tweet.userId === this.props.currentUserId) {
             return (
                 <div className="six wide column">
-                    <Link to={`/tweet/edit/${tweet.id}`} className="ui button primary">
-                        Edit
+                    <div className="buttonDiv">
+                        <Link to={`/tweet/edit/${tweet.id}`} className="ui button ">
+                            Edit
                     </Link>
-                    <Link to={`/tweet/delete/${tweet.id}`} className="ui button negative">
-                        Delete
+                        <Link to={`/tweet/delete/${tweet.id}`} className="ui button negative">
+                            Delete
                     </Link>
+                    </div>
                 </div>
             )
         }
@@ -57,9 +60,17 @@ class TweetList extends Component {
         if (this.props.isSignedIn) {
             return (
                 <div style={{ textAlign: 'right' }}>
-                    <Link to="/tweet/new" className="ui button primary">
+                    <Link to="/tweet/new" className="ui button pigPink">
                         Create Tweet
                   </Link>
+                </div>
+            )
+        } else {
+            return (
+                <div style={{ textAlign: 'right' }}>
+                    <div className="ui button pigPink">
+                        Sign in to Post
+              </div>
                 </div>
             )
         }
@@ -68,11 +79,12 @@ class TweetList extends Component {
     render() {
         return (
             <div>
-                <h2>Tweets</h2>
+                <h2>Oinkers</h2>
+                {this.renderCreate()}
                 <div className="ui celled list">
                     {this.renderList()}
                 </div>
-                {this.renderCreate()}
+
             </div>
         )
     }
