@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import history from '../history';
 
 const Modal = props => {
     return ReactDOM.createPortal(
-        <div className="ui dimmer modals visable active">
+        <div onClick={() => history.push('/')} className="ui dimmer modals visable active">
             <div className="ui standard modal visable active">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum fugiat asperiores sit repellat quasi quam nulla facere atque reiciendis nostrum consequatur deserunt quae, assumenda delectus deleniti porro non. Doloribus, saepe!
+                <div className="header">Delete</div>
+                <div className="content">
+                    Are you sure you want to delete?
+               </div>
+                <div className="actions">
+                    <button className="ui primary button">Delete</button>
+                    <button className="ui button">Cancel</button>
+                </div>
             </div>
         </div>,
         document.querySelector('#modal')
