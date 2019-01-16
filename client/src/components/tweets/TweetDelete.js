@@ -18,17 +18,22 @@ class TweetDelete extends Component {
         )
     }
 
+    renderContent() {
+        if (!this.props.stream) {
+            return 'Are you sure you want to delete this story?'
+        }
+
+        return `Are you sure you want to delete the story with the title: ${this.props.stream.title}`
+    }
+
     render() {
         return (
-            <div>
-                TweetDelete
             < Modal
-                    title="Delete Story"
-                    content="Are you sure you want to delete?"
-                    actions={this.renderActions()}
-                    onDismiss={() => history.push('/')}
-                />
-            </div >
+                title="Delete Story"
+                content={this.renderContent()}
+                actions={this.renderActions()}
+                onDismiss={() => history.push('/')}
+            />
         );
     }
 }
