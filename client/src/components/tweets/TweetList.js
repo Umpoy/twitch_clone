@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTweets } from '../../actions';
 
+const align = {
+    top: '50%',
+    transform: 'translateY(50%)'
+}
+
 class TweetList extends Component {
     componentDidMount() {
         this.props.fetchTweets();
@@ -12,7 +17,7 @@ class TweetList extends Component {
 
         if (tweet.userId === this.props.currentUserId) {
             return (
-                <div className="right floated content">
+                <div className="right floated content" style={align}>
                     <Link to={`/tweet/edit/${tweet.id}`} className="ui button primary">
                         Edit
                     </Link>
