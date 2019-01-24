@@ -28,9 +28,9 @@ class TweetList extends Component {
 
     renderList() {
         return this.props.tweets.reverse().map(tweet => {
+            console.log(this.props.tweets)
             return (
-                <div className="item" key={tweet.id}>
-
+                < div className="item" key={tweet.id} >
                     <div className="ui stackable grid">
                         <div className="ten wide column">
                             <div className="content">
@@ -44,7 +44,7 @@ class TweetList extends Component {
                         {this.renderAdmin(tweet)}
                     </div>
 
-                </div>
+                </div >
             )
         })
     }

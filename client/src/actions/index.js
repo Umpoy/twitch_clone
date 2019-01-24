@@ -26,14 +26,13 @@ export const signOut = () => {
 export const createTweet = formValues => async (dispatch, getState) => {
     const { userId, name } = getState().auth;
     const response = await tweets.post('/tweets', { ...formValues, userId, name });
-    console.log(getState().auth);
     dispatch({ type: CREATE_TWEET, payload: response.data });
     history.push('/');
 }
 
 export const fetchTweets = () => async dispatch => {
     const response = await tweets.get('/tweets');
-
+    console.log('fetch tweets: ', response)
     dispatch({ type: FETCH_TWEETS, payload: response.data });
 }
 
