@@ -5,7 +5,6 @@ import { signIn, signOut } from '../actions';
 
 class GoogleAuth extends Component {
 
-
     componentDidMount() {
         window.gapi.load('client:auth2', () => {
             window.gapi.client.init({
@@ -16,8 +15,6 @@ class GoogleAuth extends Component {
                 this.auth = window.gapi.auth2.getAuthInstance();
                 this.onAuthChange(this.auth.isSignedIn.get());
                 this.auth.isSignedIn.listen(this.onAuthChange);
-                console.log('name: ', this.auth.currentUser.Ab.w3.wea.slice(0, 1));
-
             });
         });
     }

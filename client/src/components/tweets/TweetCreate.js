@@ -5,9 +5,7 @@ import TweetForm from './TweetForm';
 
 class TweetCreate extends Component {
 
-
     onSubmit = (formValues) => {
-        console.log(formValues);
         this.props.createTweet(formValues);
     }
 
@@ -15,21 +13,20 @@ class TweetCreate extends Component {
         if (this.props.isSignedIn) {
             return (
                 <div>
-                    <h3>Create a Story</h3>
+                    <h3>Create an Oink</h3>
                     <TweetForm onSubmit={this.onSubmit} />
                 </div>
             )
         } else {
             return (
                 <div>
-                    <h3>Please Sign In to tell your story</h3>
+                    <h3>Please Sign In to post your Oink</h3>
                 </div>
             )
         }
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 {this.isSignedIn()}

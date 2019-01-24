@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTweets } from '../../actions';
-import GoogleAuth from '../GoogleAuth'
-
-const align = {
-    top: '50%',
-    transform: 'translateY(50%)'
-}
 
 class TweetList extends Component {
     componentDidMount() {
@@ -40,7 +34,6 @@ class TweetList extends Component {
                     <div className="ui stackable grid">
                         <div className="ten wide column">
                             <div className="content">
-                                {/* <h3>{tweet.title}</h3> */}
                                 <h3>
                                     {tweet.description}
                                 </h3>
