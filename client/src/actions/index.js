@@ -32,7 +32,7 @@ export const createTweet = formValues => async (dispatch, getState) => {
 
 export const fetchTweets = () => async dispatch => {
     const response = await tweets.get('/tweets');
-    console.log('fetch tweets: ', response)
+
     dispatch({ type: FETCH_TWEETS, payload: response.data });
 }
 
