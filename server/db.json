@@ -1,10 +1,3 @@
 {
-  "tweets": [
-    {
-      "description": "asd",
-      "userId": "10220069070909274218",
-      "name": "Audrian M.",
-      "id": 3
-    }
-  ]
+  "tweets": []
 }
